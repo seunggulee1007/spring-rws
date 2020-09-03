@@ -9,6 +9,12 @@ group = 'com.inno.rws'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '8'
 
+bootWar{
+	archiveBaseName='RWS'
+	archiveFileName='RWS.war'
+	archiveVersion='0.1'
+}
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
