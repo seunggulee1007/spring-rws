@@ -6,7 +6,7 @@ spring:
   datasource:
     hikari:
       rws:
-        jdbc-url: jdbc:log4jdbc:mysql://115.143.85.142:3307/rws?characterEncoding=UTF-8&serverTimezone=UTC
+        jdbc-url: jdbc:log4jdbc:mysql://115.143.85.142:3306/rws?characterEncoding=UTF-8&serverTimezone=UTC
         username: rws
         password: rwsepdlxjqpdltm1!
         driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
