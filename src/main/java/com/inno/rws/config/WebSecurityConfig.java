@@ -1,5 +1,7 @@
 package com.inno.rws.config;
 
+import java.util.Arrays;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -37,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // jwt token으로 인증하므로 세션은 필요없으므로 생성안함.
             .and()
                 .cors()
-                    .configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues())
+                    .configurationSource(request -> new CorsConfiguration(setCorsConfig()).applyPermitDefaultValues())
             .and()
                 .authorizeRequests()                                        // 다음 리퀘스트에 대한 사용권한 체크
                     .antMatchers("/*", "/api/signUp", "/api/signIn")
@@ -50,6 +52,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint(new CustomAuthenticationEntryPoint())
             .and()
                 .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class); // jwt token 필터를 id/password 인증 필터 전에 넣는다
+    }
+    
+    public CorsConfiguration setCorsConfig() {
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowedMethods(Arrays.asList("GET","PUT","DELETE","POST"));
+        return config;
+        
     }
     
     @Override // ignore check swagger resource
