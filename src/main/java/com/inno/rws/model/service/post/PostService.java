@@ -11,4 +11,8 @@ public interface PostService {
     
     public ResultVO selectPostList(String crtId);
     
+    public ResultVO deletePost(int postId);
+    
+    public ResultVO updatePost(PostVO postVO);
+    
 }

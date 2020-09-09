@@ -14,6 +14,10 @@ public interface PostDao {
     
     public int insertPost(PostVO postVO);
     
-    public Optional<List<PostVO>> selectPostList(String crtId);
+    public List<PostVO> selectPostList(String crtId);
+    
+    public int deletePost(int postId);
+    
+    public int updatePost(PostVO postVO);
     
 }

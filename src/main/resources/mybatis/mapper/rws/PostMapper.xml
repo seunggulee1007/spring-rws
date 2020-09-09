@@ -43,4 +43,22 @@
         where 
             crt_id = #{crtId}
     </select>
+    
+    <delete id="deletePost">
+        delete from tb_post 
+            where
+                post_id = #{postId}
+    </delete>
+    
+    <update id="updatePost">
+        update
+            tb_post
+                set
+                    title = #{title}
+                    ,contents = #{contents}
+                    ,chg_dtm = NOW()
+            where
+                post_id = #{postId}
+    </update>
+    
 </mapper>

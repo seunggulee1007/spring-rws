@@ -1,8 +1,10 @@
 package com.inno.rws.controller;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -47,4 +49,13 @@ public class PostController {
         return postService.selectPost(postId);
     }
     
+    @DeleteMapping("/post/{postId}")
+    public ResultVO deletePost(@PathVariable int postId) {
+        return postService.deletePost(postId);
+    }
+    
+    @PutMapping("/post")
+    public ResultVO updatePost(PostVO postVO) {
+        return postService.updatePost(postVO);
+    }
 }
