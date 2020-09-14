@@ -19,6 +19,7 @@ public enum CommonMsg {
     FALSE_ID("비밀번호가 틀렸습니다."),
     SUCCESS_LOGIN("로그인이 성공하였습니다."),
     NO_DATA_FOUND("조회된 데이터가 없습니다."),
+    SUCCESS_SEARCH("조회에 성공하였습니다."),
     ;
     String msg;
     CommonMsg(String msg) {

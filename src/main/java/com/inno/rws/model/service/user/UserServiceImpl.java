@@ -1,6 +1,5 @@
 package com.inno.rws.model.service.user;
 
-import java.rmi.AlreadyBoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import com.inno.rws.advice.exception.AlreadyMemberException;
 import com.inno.rws.advice.exception.FalseIDException;
 import com.inno.rws.advice.exception.NoMemberException;
 import com.inno.rws.config.JwtTokenProvider;
@@ -28,10 +28,10 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;
     
-    public ResultVO signUp(UserVO userVO) throws AlreadyBoundException {
+    public ResultVO signUp(UserVO userVO) throws AlreadyMemberException {
         UserVO user = userDao.selectUser(userVO.getUserId()).orElseGet(() -> new UserVO());
         if(!StringUtils.isEmpty(user.getUserId())) {
-            throw new AlreadyBoundException();
+            throw new AlreadyMemberException();
         }
         userVO.setPassword(passwordEncoder.encode(userVO.getPassword()));
         userDao.insertUser(userVO);

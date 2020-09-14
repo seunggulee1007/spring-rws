@@ -1,11 +1,10 @@
 package com.inno.rws.controller;
 
-import java.rmi.AlreadyBoundException;
-
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.inno.rws.advice.exception.AlreadyMemberException;
 import com.inno.rws.model.service.user.UserService;
 import com.inno.rws.vo.ResultVO;
 import com.inno.rws.vo.UserVO;
@@ -22,7 +21,7 @@ public class SignController {
     
     @PostMapping("/signUp")
     @ApiOperation(value="회원 등록", notes="회원 등록")
-    public ResultVO signUp(UserVO userVO)  throws AlreadyBoundException {
+    public ResultVO signUp(UserVO userVO)  throws AlreadyMemberException {
         return userService.signUp(userVO);
     }
     

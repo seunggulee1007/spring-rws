@@ -22,7 +22,7 @@ public class AlreadyMemberException extends RuntimeException {
     }
      
     public AlreadyMemberException() {
-        super(CommonMsg.NO_VERSION.getMsg());
+        super(CommonMsg.ALREADY_MEMBER.getMsg());
     }
 
 }

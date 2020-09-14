@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.inno.rws.advice.exception.AlreadyMemberException;
+import com.inno.rws.advice.exception.BizServiceException;
 import com.inno.rws.advice.exception.CAuthenticationEntryPointException;
+import com.inno.rws.advice.exception.CommonUtilException;
 import com.inno.rws.advice.exception.FalseIDException;
 import com.inno.rws.advice.exception.NoMemberException;
 import com.inno.rws.advice.exception.NoVersionException;
@@ -103,4 +105,25 @@ public class ExceptionAdvice{
                 .build();
         return resultVO;
     }
+    
+    @ExceptionHandler(BizServiceException.class)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    protected ResultVO BizServiceException(BizServiceException e, HttpServletRequest request) {
+        return ResultVO.builder()
+                .result(CommonCode.FAIL.getCode())
+                .resultMsg(e.getMessage())
+                .errMsg(e.getStackTrace()[0].toString())
+                .build();
+    }
+    
+    @ExceptionHandler(CommonUtilException.class)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    protected ResultVO CommonUtilException(CommonUtilException e, HttpServletRequest request) {
+        return ResultVO.builder()
+                .result(CommonCode.FAIL.getCode())
+                .resultMsg(e.getMessage())
+                .errMsg(e.getStackTrace()[0].toString())
+                .build();
+    }
+    
 }
