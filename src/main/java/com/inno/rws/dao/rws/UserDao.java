@@ -13,4 +13,6 @@ public interface UserDao {
     
     public int insertUser(UserVO userVO);
     
+    public int updatePwd(UserVO userVO);
+    
 }

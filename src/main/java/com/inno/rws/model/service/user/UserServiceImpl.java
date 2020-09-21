@@ -51,4 +51,18 @@ public class UserServiceImpl implements UserService {
         return ResultVO.builder().data(map).resultMsg(CommonMsg.SUCCESS_LOGIN.getMsg()).build();
     }
 
+    
+    public ResultVO chgPwd(UserVO userVO) {
+        UserVO user = userDao.selectUser(userVO.getUserId()).orElseThrow(NoMemberException::new);
+        String resultMsg = "비밀번호 변경에 실패하였습니다.";
+        long result = -1;
+        if (!passwordEncoder.matches(userVO.getPassword(), user.getPassword())) throw new FalseIDException();
+        if(userDao.updatePwd(userVO) > 0) {
+            resultMsg = "비밀번호 변경에 성공하였습니다.";
+            result = 0;
+        }
+        
+        return ResultVO.builder().result(result).resultMsg(resultMsg).build();
+        
+    }
 }

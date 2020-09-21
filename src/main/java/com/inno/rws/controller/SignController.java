@@ -31,4 +31,9 @@ public class SignController {
         return userService.signIn(userVO);
     }
     
+    @PostMapping("/chgPwd")
+    @ApiOperation(value="비밀번호변경", notes="비밀번호 변경 프로세스")
+    public ResultVO chgPwd(UserVO userVO) {
+        return userService.chgPwd(userVO);
+    }
 }

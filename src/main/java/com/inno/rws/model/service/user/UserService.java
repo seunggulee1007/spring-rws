@@ -10,4 +10,6 @@ public interface UserService {
     
     public ResultVO signIn(UserVO userVO);
     
+    public ResultVO chgPwd(UserVO userVO);
+    
 }
