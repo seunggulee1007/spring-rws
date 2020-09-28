@@ -5,9 +5,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import com.inno.rws.advice.exception.NoMemberException;
-import com.inno.rws.dao.rws.UserDao;
-import com.inno.rws.vo.UserDetailVO;
-import com.inno.rws.vo.UserVO;
+import com.inno.rws.model.dao.rws.UserDao;
+import com.inno.rws.model.vo.UserDetailVO;
+import com.inno.rws.model.vo.UserVO;
 
 import lombok.RequiredArgsConstructor;
 

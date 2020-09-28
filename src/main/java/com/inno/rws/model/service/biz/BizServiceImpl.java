@@ -15,9 +15,9 @@ import org.springframework.stereotype.Service;
 import com.inno.rws.advice.exception.BizServiceException;
 import com.inno.rws.enums.CommonCode;
 import com.inno.rws.enums.CommonMsg;
+import com.inno.rws.model.vo.BizVO;
+import com.inno.rws.model.vo.ResultVO;
 import com.inno.rws.util.CommonUtil;
-import com.inno.rws.vo.BizVO;
-import com.inno.rws.vo.ResultVO;
 
 @Service
 public class BizServiceImpl implements BizService {

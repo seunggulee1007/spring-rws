@@ -13,10 +13,10 @@ import com.inno.rws.advice.exception.AlreadyMemberException;
 import com.inno.rws.advice.exception.FalseIDException;
 import com.inno.rws.advice.exception.NoMemberException;
 import com.inno.rws.config.JwtTokenProvider;
-import com.inno.rws.dao.rws.UserDao;
 import com.inno.rws.enums.CommonMsg;
-import com.inno.rws.vo.ResultVO;
-import com.inno.rws.vo.UserVO;
+import com.inno.rws.model.dao.rws.UserDao;
+import com.inno.rws.model.vo.ResultVO;
+import com.inno.rws.model.vo.UserVO;
 
 import lombok.RequiredArgsConstructor;
 

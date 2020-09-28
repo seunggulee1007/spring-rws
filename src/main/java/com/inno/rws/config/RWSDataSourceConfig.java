@@ -27,7 +27,7 @@ import com.zaxxer.hikari.HikariDataSource;
  */
 @Configuration
 @EnableTransactionManagement
-@MapperScan(basePackages = "com.inno.rws.dao.rws", sqlSessionFactoryRef = "rwsSqlSessionFactory")
+@MapperScan(basePackages = "com.inno.rws.model.dao.rws", sqlSessionFactoryRef = "rwsSqlSessionFactory")
 public class RWSDataSourceConfig extends HikariConfig {
     
     @Bean(name = "rwsDataSource")

@@ -2,7 +2,7 @@ package com.inno.rws.model.service.biz;
 
 import java.io.IOException;
 
-import com.inno.rws.vo.ResultVO;
+import com.inno.rws.model.vo.ResultVO;
 
 public interface BizService {
 

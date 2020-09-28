@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.inno.rws.advice.exception.NoDataFoundException;
-import com.inno.rws.dao.rws.PostDao;
 import com.inno.rws.enums.CommonMsg;
-import com.inno.rws.vo.PostVO;
-import com.inno.rws.vo.ResultVO;
+import com.inno.rws.model.dao.rws.PostDao;
+import com.inno.rws.model.vo.PostVO;
+import com.inno.rws.model.vo.ResultVO;
 
 import lombok.RequiredArgsConstructor;
 

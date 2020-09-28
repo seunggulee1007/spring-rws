@@ -16,7 +16,7 @@ import com.inno.rws.advice.exception.FalseIDException;
 import com.inno.rws.advice.exception.NoMemberException;
 import com.inno.rws.advice.exception.NoVersionException;
 import com.inno.rws.enums.CommonCode;
-import com.inno.rws.vo.ResultVO;
+import com.inno.rws.model.vo.ResultVO;
 
 import lombok.RequiredArgsConstructor;
 

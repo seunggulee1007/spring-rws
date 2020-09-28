@@ -1,7 +1,7 @@
 package com.inno.rws.model.service.post;
 
-import com.inno.rws.vo.PostVO;
-import com.inno.rws.vo.ResultVO;
+import com.inno.rws.model.vo.PostVO;
+import com.inno.rws.model.vo.ResultVO;
 
 public interface PostService {
 

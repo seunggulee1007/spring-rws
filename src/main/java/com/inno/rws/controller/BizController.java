@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.inno.rws.model.service.biz.BizService;
-import com.inno.rws.vo.ResultVO;
+import com.inno.rws.model.vo.ResultVO;
 
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;

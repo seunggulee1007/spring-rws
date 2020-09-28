@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.inno.rws.model.service.post.PostService;
-import com.inno.rws.vo.PostVO;
-import com.inno.rws.vo.ResultVO;
+import com.inno.rws.model.vo.PostVO;
+import com.inno.rws.model.vo.ResultVO;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

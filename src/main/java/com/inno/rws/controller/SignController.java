@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.inno.rws.advice.exception.AlreadyMemberException;
 import com.inno.rws.model.service.user.UserService;
-import com.inno.rws.vo.ResultVO;
-import com.inno.rws.vo.UserVO;
+import com.inno.rws.model.vo.ResultVO;
+import com.inno.rws.model.vo.UserVO;
 
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
