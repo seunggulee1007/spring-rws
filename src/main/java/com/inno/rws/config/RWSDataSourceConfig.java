@@ -14,6 +14,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -30,12 +31,17 @@ import com.zaxxer.hikari.HikariDataSource;
 @MapperScan(basePackages = "com.inno.rws.model.dao.rws", sqlSessionFactoryRef = "rwsSqlSessionFactory")
 public class RWSDataSourceConfig extends HikariConfig {
     
-    @Bean(name = "rwsDataSource")
+    @Bean(name = "rwsHikariDataSource")
     @ConfigurationProperties(prefix = "spring.datasource.hikari.rws")
-    public DataSource secondDataSource() {
+    public DataSource dataSourceCreator() {
         return DataSourceBuilder.create().type(HikariDataSource.class).build();
     }
-    
+
+    @Bean(name="rwsDataSource")
+    public DataSource dataSource(@Qualifier("rwsHikariDataSource") DataSource dataSource) {
+        return new LazyConnectionDataSourceProxy(dataSource);
+    }
+
     @Bean(name = "rwsSqlSessionFactory")
     public SqlSessionFactory sqlSessionFactory(
             @Qualifier("rwsDataSource") DataSource dataSource,
@@ -50,7 +56,7 @@ public class RWSDataSourceConfig extends HikariConfig {
     }
     
     @Bean(name = "rwsSqlSession")
-    public SqlSessionTemplate sqlSession(@Qualifier("rwsSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+    public SqlSessionTemplate sqlSession(@Qualifier("rwsSqlSessionFactory") SqlSessionFactory sqlSessionFactory) {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
     
