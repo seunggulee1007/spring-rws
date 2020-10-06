@@ -7,7 +7,7 @@ plugins {
 
 group = 'com.inno.rws'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '8'
+// sourceCompatibility = '11'
 
 bootWar{
 	archiveBaseName='RWS'

@@ -35,7 +35,6 @@
     <logger name="java.sql" level="ERROR"/>
 
 <!-- 	<logger name="org.springframework.boot.actuate.endpoint.web.servlet" level="DEBUG"/> -->
-	<logger name="net.smilegate" level="DEBUG"/>
 	<logger name="jdbc.sqlonly" level="OFF"/>
     <logger name="jdbc.sqltiming" level="DEBUG"/>
     <logger name="jdbc.audit" level="OFF"/>
