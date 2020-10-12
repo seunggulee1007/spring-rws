@@ -24,6 +24,7 @@ public class BizController {
     @GetMapping("/bizInfo/{bizNo}")
     public ResultVO getBiz(@PathVariable String bizNo) throws IOException {
         return bizService.getBizInfo(bizNo);
+        고의로 에러를 내 본다.
     }
     
 }
