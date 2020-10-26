@@ -9,13 +9,19 @@ import com.inno.rws.model.vo.PagingVO;
 
 @Mapper
 public interface CodeMasterDao {
-    
+
+    /**
+     * @apiNote 코드 마스터 건수 조회
+     * @return
+     */
+    int selectCodeMasterCnt();
+
     /**
      * @apiNote 코드 마스터 조회
      * @author leesg
      * @return
      */
-    public List<CodeMasterVO> selectCodeMasterList(PagingVO pagingVO);
+    List<CodeMasterVO> selectCodeMasterList(PagingVO pagingVO);
 
     /**
      * @apiNote 코드 마스터 정보 등록
@@ -23,7 +29,7 @@ public interface CodeMasterDao {
      * @param codeMasterVO
      * @return
      */
-    public int insertCodeMaster(CodeMasterVO codeMasterVO);
+    int insertCodeMaster(CodeMasterVO codeMasterVO);
     
     /**
      * @apiNote 코드 마스터 정보 수정
@@ -31,7 +37,7 @@ public interface CodeMasterDao {
      * @param codeMasterVO
      * @return
      */
-    public int updateCodeMaster(CodeMasterVO codeMasterVO);
+    int updateCodeMaster(CodeMasterVO codeMasterVO);
     
     /**
      * @apiNote 코드 마스터 삭제
@@ -39,6 +45,6 @@ public interface CodeMasterDao {
      * @param codeMasterId
      * @return
      */
-    public int deleteCodeMaster(int codeMasterId);
+    int deleteCodeMaster(int codeMasterId);
     
 }
